@@ -3,7 +3,7 @@
 #include <Windows.h>
 #include <string.h>
 #include "XOR.h"
-
+//_CRT_SECURE_NO_WARNINGS 전처리기 추가
 char* PATH() {
 	static char pPath[MAX_PATH];
 	char* NAME = getenv("USER");
