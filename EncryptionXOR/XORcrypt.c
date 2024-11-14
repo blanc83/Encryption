@@ -12,3 +12,10 @@ char* PATH() {
 	}
 	return pPath;
 }
+void eCryptFile(const char* File, const char* KEY) {
+	FILE *pfile = fopen(File, "rb");
+	if (!pfile) {
+		printf("%s\nFail Open File.",File);
+		return 0;
+	}
+}
