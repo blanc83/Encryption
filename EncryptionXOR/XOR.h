@@ -2,4 +2,6 @@
 #ifndef XOR_h
 #define XOR_H
 
-void CryptFile(const char* File, const char* KEY);
+void eCryptFile(const char* File, const char* KEY);
+
+void dCryptFile(const char* File, const char* KEY);
