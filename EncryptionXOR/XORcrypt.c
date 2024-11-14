@@ -10,7 +10,7 @@ void dCryptFile(const char* File, const char* KEY) {
 }
 
 void eCryptFile(const char* File, const char* KEY) {
-    FILE* pfile = fopen(File, "rb");
+    FILE* pfile = fopen(File, "rb"); // rb = 바이너리모드
     if (!pfile) {
         printf("%s\nFailed to Open File.\n", File);
         return;
@@ -21,10 +21,10 @@ void eCryptFile(const char* File, const char* KEY) {
     fseek(pfile, 0, SEEK_SET);
 
     char* buff = malloc(File_SIZE);
-    if (buff == NULL) {
+    if (buff == NULL) { //파일크기 넘어가면 메모리할당안되고 리턴0됨
         printf("Failed to Allocate Memory.\n");
         fclose(pfile);
-        return;
+        return 0;
     }
     fread(buff, 1, File_SIZE, pfile);
     fclose(pfile);
@@ -46,5 +46,6 @@ void eCryptFile(const char* File, const char* KEY) {
     fclose(pfile);
 
     free(buff);
-    printf("%s\nEncrypted File.\n", File);
+    printf("%s\nEncrypted File.\n", File); /* XOR암호화는 데이터를 뒤섞으므로 비트들이 깨질수있음 따라서
+    암호화해도 일부 암호화값들이 비워지고 띄어쓰기 되는 경우 발생*/
 }
