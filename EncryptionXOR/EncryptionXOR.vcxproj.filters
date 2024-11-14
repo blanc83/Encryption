@@ -18,6 +18,9 @@
     <ClInclude Include="XOR.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="ExtenCrypt.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.c">

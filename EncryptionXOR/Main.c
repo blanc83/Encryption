@@ -31,7 +31,7 @@ int main() {
     //    dCryptFile(Path_, KEY);
     //}
     //else {
-    //    printf("ERROR: Invalid option\n");
+    //    printf("Invaild\n");
     //}
     switch (or ) { // 기능추가위해 switch로 변경
     case 1:
