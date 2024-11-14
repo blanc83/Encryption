@@ -3,50 +3,48 @@
 #include <Windows.h>
 #include <string.h>
 #include "XOR.h"
-//_CRT_SECURE_NO_WARNINGS 전처리기 추가
-char* PATH() {
-	static char pPath[MAX_PATH];
-	char* NAME = getenv("USER");
-	if (NAME != NULL) {
-		printf(PATH, sizeof(pPath), "%s\\Desktop\\", NAME); //기본경로 바탕화면(""부분 경로변경필요)
-	}
-	return pPath;
-}
+
 void dCryptFile(const char* File, const char* KEY) {
-	eCryptFile(File, KEY);
-	printf("%s\nDecrypt File.", File);
+    eCryptFile(File, KEY);
+    printf("%s\nDecrypted File.\n", File);
 }
+
 void eCryptFile(const char* File, const char* KEY) {
-	FILE* pfile = fopen(File, "rb");
-	if (!pfile) {
-		printf("%s\nFail Open File.", File);
-		return 0;
-	}
-	fseek(pfile, 0, SEEK_END);
-	long File_SIZE = ftell(File);
-	fseek(pfile, 0, SEEK_SET);
-	char* buff = malloc(File_SIZE);
-	if (buff == NULL) {
-		printf("Fail Assign Memory");
-		fclose(pfile);
-		return 0;
-	}
-	fread(buff, 1, File_SIZE, pfile);
-	fclose(pfile);
+    FILE* pfile = fopen(File, "rb");
+    if (!pfile) {
+        printf("%s\nFailed to Open File.\n", File);
+        return;
+    }
 
-	int KEY_ = strlen(KEY);
+    fseek(pfile, 0, SEEK_END);
+    size_t File_SIZE = ftell(pfile);
+    fseek(pfile, 0, SEEK_SET);
 
-	for (int i = 0; i < File_SIZE; i++) {
-		buff[i] ^= KEY[i % KEY_];
-	}
-	pfile = fopen(File, "wb");
-	if (!pfile) {
-		printf("%s\nFaild Open File.", File);
-		free(buff);
-		return 0;
-	}
-	fwrite(buff, 1, File_SIZE, pfile);
-	fclose(pfile);
-	free(buff);
-	printf("%s\nEncrypted File.", File);
+    char* buff = malloc(File_SIZE);
+    if (buff == NULL) {
+        printf("Failed to Allocate Memory.\n");
+        fclose(pfile);
+        return;
+    }
+    fread(buff, 1, File_SIZE, pfile);
+    fclose(pfile);
+
+    size_t KEY_LEN = strlen(KEY);
+
+    for (size_t i = 0; i < File_SIZE; i++) {
+        buff[i] ^= KEY[i % KEY_LEN];
+    }
+
+    pfile = fopen(File, "wb");
+    if (!pfile) {
+        printf("%s\nFailed to Open File.\n", File);
+        free(buff);
+        return;
+    }
+
+    fwrite(buff, 1, File_SIZE, pfile);
+    fclose(pfile);
+
+    free(buff);
+    printf("%s\nEncrypted File.\n", File);
 }
