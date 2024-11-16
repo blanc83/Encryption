@@ -12,4 +12,3 @@ void ExDCrpyt(char* FilePath, const char* exe) { //확장자 삭제
 		*Ext = '\0';
 	}
 }
-int FindTxt(const char* FilePath); // 텍스트 파일이면 
