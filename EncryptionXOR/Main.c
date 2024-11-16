@@ -13,16 +13,17 @@ char* PATH() {
 }
 int main() {
     char* dPath = PATH();
-    printf("Please Enter File Name: ");
+    printf("Please Enter File Name\n");
+    //printf("When you enter TXT, crypt text. : ");
     scanf("%s", File);
-   
-    char Path_[200];
+    char Path_[300];
     snprintf(Path_, sizeof(Path_), "%s\\%s", dPath, File); // 전체경로 생성부분 수정X
 
     printf("Please Enter KEY: ");
     scanf("%s", KEY);
 
-    printf("1. EnCrypt\n2. DeCrypt: ");
+    printf("1. EnCrypt\n2. DeCrypt\n");
+    printf("Please Enter Number : ");
     scanf("%d", &or );
     //if (or == 1) {
     //    eCryptFile(Path_, KEY);
@@ -40,9 +41,15 @@ int main() {
     case 2:
         dCryptFile(Path_, KEY);
         break;
-    default:
-        printf("ERROR: Invalid option\n");
-        break;
+    //case 3:
+    //    ExECrpyt(Path_, ".Crypt");
+    //    break;
+    //case 4:
+    //    ExDCrpyt(Path_, ".Crypt");
+    //    break;
+    //default:
+    //    printf("ERROR: Invalid option\n");
+    //    break;
     }
     system("PAUSE");
     return 0;

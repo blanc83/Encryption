@@ -21,10 +21,10 @@ void eCryptFile(const char* File, const char* KEY) {
     fseek(pfile, 0, SEEK_SET);
 
     char* buff = malloc(File_SIZE);
-    if (buff == NULL) { //파일크기 넘어가면 메모리할당안되고 리턴0됨
+    if (buff == NULL) { //파일크기 넘어가면 메모리할당안되고 리턴됨
         printf("Failed to Allocate Memory.\n");
         fclose(pfile);
-        return 0;
+        return;
     }
     fread(buff, 1, File_SIZE, pfile);
     fclose(pfile);
