@@ -131,6 +131,7 @@
     <ClInclude Include="XOR.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ExCrypt.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="XORcrypt.c" />
   </ItemGroup>
