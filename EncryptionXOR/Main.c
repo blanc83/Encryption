@@ -4,7 +4,7 @@
 #include "XOR.h"
 
 char File[100];
-char KEY[50];
+char KEY[100];
 int or ;
 char* PATH() {
     static char pPath[100];
@@ -22,7 +22,7 @@ int main() {
     printf("Please Enter KEY: ");
     scanf("%s", KEY);
 
-    printf("1. EnCrypt\n2. DeCrypt\n");
+    printf("1. XOR Encrypt\n2. XOR Decrypt\n");
     printf("Please Enter Number : ");
     scanf("%d", &or );
     //if (or == 1) {
@@ -42,14 +42,20 @@ int main() {
         dCryptFile(Path_, KEY);
         break;
     //case 3:
+    //    RSAeCryptFile(File, KEY);  // RSA 암호화
+    //    break;
+    //case 4:
+    //    RSAdCryptFile(File, KEY);  // RSA 복호화
+    //    break;
+    //case 3:
     //    ExECrpyt(Path_, ".Crypt");
     //    break;
     //case 4:
     //    ExDCrpyt(Path_, ".Crypt");
     //    break;
-    //default:
-    //    printf("ERROR: Invalid option\n");
-    //    break;
+    default:
+        printf("ERROR: Invalid option\n");
+        break;
     }
     system("PAUSE");
     return 0;
