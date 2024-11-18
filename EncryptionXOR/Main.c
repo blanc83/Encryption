@@ -3,7 +3,6 @@
 #include <string.h>
 #include "XOR.h"
 #include "RSA.h"
-#include "ExtenCrypt.h"
 #include "Hook.h"
 char File[100];
 char KEY[100];
@@ -16,7 +15,6 @@ char* PATH() {
 int main() {
     char* dPath = PATH();
     printf("Please Enter File Name\n");
-    //printf("When you enter TXT, crypt text. : ");
     scanf("%s", File);
     char Path_[300];
     snprintf(Path_, sizeof(Path_), "%s\\%s", dPath, File); // 전체경로 생성부분 수정X
@@ -24,7 +22,7 @@ int main() {
     printf("Please Enter KEY: ");
     scanf("%s", KEY);
 
-    printf("1. XOR Encrypt\n2. XOR Decrypt\n");
+    printf("1. XOR Encrypt\n2. XOR Decrypt\n3. Hook Txt\n");
     printf("Please Enter Number : ");
     scanf("%d", &or );
     //if (or == 1) {

@@ -18,12 +18,6 @@
     <ClInclude Include="XOR.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="ExtenCrypt.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="RSA.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Hook.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -33,12 +27,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="XORcrypt.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ExCrypt.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="RSA.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Hook.c">
