@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ExCrypt.c" />
+    <ClCompile Include="Hook.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="RSA.c" />
     <ClCompile Include="XORcrypt.c" />

@@ -18,7 +18,7 @@
 //		*Ext = '\0'; // 확장자 제거 수정X
 //		printf("%s\nDecrypted File.\n", FilePath);
 //	}
-//	else {
-//		printf("Error: Extension not found in %s\n", FilePath);
+//	//else {
+//		printf("not found in %s\n", FilePath);
 //	}
 //}

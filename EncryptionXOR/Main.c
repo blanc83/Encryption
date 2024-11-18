@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "XOR.h"
-
+#include "RSA.h"
+#include "ExtenCrypt.h"
+#include "Hook.h"
 char File[100];
 char KEY[100];
 int or ;
@@ -40,6 +42,14 @@ int main() {
         break;
     case 2:
         dCryptFile(Path_, KEY);
+        break;
+    case 3:
+        printf("Enter Text. : ");
+        char text[200];
+        getchar();
+        fgets(text, sizeof(text), stdin); // 텍스트 입력
+        text[strcspn(text, "\n")] = '\0';
+        HookTxt(Path_, text);
         break;
     //case 3:
     //    RSAeCryptFile(File, KEY);  // RSA 암호화
