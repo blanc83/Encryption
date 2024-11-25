@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Hook.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="ROT13.c" />
     <ClCompile Include="XORcrypt.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -35,5 +35,8 @@
     <ClCompile Include="Hook.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ROT13.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

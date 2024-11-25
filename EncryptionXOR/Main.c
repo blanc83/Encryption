@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "XOR.h"
-#include "RSA.h"
+#include "ROT13.h"
 #include "Hook.h"
 char File[100];
 char KEY[100];
@@ -21,9 +21,12 @@ int main() {
 
     printf("Please Enter KEY: ");
     scanf("%s", KEY);
-
-    printf("1. XOR Encrypt\n2. XOR Decrypt\n3. Hook Txt\n");
-    printf("Please Enter Number : ");
+    printf("1. XOR Encrypt\n");
+    printf("2. XOR Decrypt\n");
+    printf("3. Hook Txt\n");
+    printf("4. ROT13 Encrypt Text File\n");
+    printf("5. ROT13 Decrypt Text File\n");
+    printf("Please Enter Number: ");
     scanf("%d", &or );
     //if (or == 1) {
     //    eCryptFile(Path_, KEY);
@@ -48,6 +51,12 @@ int main() {
         fgets(text, sizeof(text), stdin); // 텍스트 입력
         text[strcspn(text, "\n")] = '\0';
         HookTxt(Path_, text);
+        break;
+    case 4:
+        rot13_encrypt_file(Path_);
+        break;
+    case 5:
+        rot13_decrypt_file(Path_); // ROT13로 파일 복호화
         break;
     //case 3:
     //    RSAeCryptFile(File, KEY);  // RSA 암호화
