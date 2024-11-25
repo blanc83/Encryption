@@ -71,7 +71,7 @@ int main() {
     //    ExDCrpyt(Path_, ".Crypt");
     //    break;
     default:
-        printf("ERROR: Invalid option");
+        printf("Option Not Found.");
         break;
     }
     system("PAUSE");
