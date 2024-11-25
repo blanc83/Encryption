@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Hook.h" />
+    <ClInclude Include="ROT13.h" />
     <ClInclude Include="XOR.h" />
   </ItemGroup>
   <ItemGroup>

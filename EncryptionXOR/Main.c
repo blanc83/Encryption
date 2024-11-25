@@ -62,7 +62,7 @@ int main() {
     //    ExDCrpyt(Path_, ".Crypt");
     //    break;
     default:
-        printf("ERROR: Invalid option\n");
+        printf("ERROR: Invalid option");
         break;
     }
     system("PAUSE");
